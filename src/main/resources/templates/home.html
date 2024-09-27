@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}"/>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+
+</head>
+<body>
+<div class="bg-grey-200 w-1/2 p-4 flex flex-col items-center space-y-3 mx-auto mt-4">
+  <h1 class="text-2 font-bold" data-th-text="${name}">
+      Welcome To Home Page
+  </h1>
+   <p class ="text-xl text-grey-700">
+       YOUTUBE CHANNEL:<span data-th-text="${youtube}"></span>
+   </p>
+   <p>
+       GITHUB REPO LINK:<span data-th-text="${GitHub}"></span>
+   </p>
+
+    <a data-th-href="${GitHub}">click here to open GITHUB</a>
+    <p>Lorem ipsum,
+        placeholder or dummy text used in typesetting and graphic design for previewing layouts.
+        It features scrambled Latin text, which emphasizes the design over content of the layout.
+        It is the standard placeholder text of the printing and publishing industries.
+        Related Topics: graphic design typesetting.
+    </p>
+    <div>
+        <button class ="px-3 py-3 rounded bg-blue-700 hover:bg-blue-600 text-white">click</button>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
+</body>
+</html>
