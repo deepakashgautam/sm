@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,9 +10,25 @@
   THIS IS SERVICE PAGE
 </h1>
 <hr>
-
   <div th:replace="~{base :: parent}"><h1>
     THIS IS PARENT FRAGMENT</h1></div>
+</body>
+</html-->
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{:: #content},~{::title},~{::script})}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" contect="width=device-width, initial-sacle=1.0" />
+  <title>service</title>
+</head>
+<body>
+<section id="content">
+  <h1>WELCOME TO SERVICE PAGE</h1>
+  <H2>SERVICES OFFERED BY SCM</H2>
+</section>
+<script>
+  console.log("service page")
+</script>
 
 </body>
 </html>

@@ -1,12 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+      th:fragment="parent(content,title,script)"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" contect="width=device-width, initial-sacle=1.0" />
+    <title data-th-replace="${title}">SCM</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+<!--comman header-->
+   <div data-th-replace="navbar::navbar"></div>
 
-<div th:fragment="parent">
-    <h1>This is parent fragment</h1>
-    <p>
-        Lorem ipsum,
-        placeholder or dummy text used in typesetting and graphic design for previewing layouts.
-        It features scrambled Latin text, which emphasizes the design over content of the layout.
-        It is the standard placeholder text of the printing and publishing industries.
-        Related Topics: graphic design typesetting.
-    </p>
-
+<!-- main content-->
+<div class="p-4">
+<section data-th-replace="${content}"></section>
 </div>
+<!--flowbite content-->
+<!--comman footer-->
+   <!--footer class="p-4">
+       Footer: SCM Project By DEEPAKASH
+   </footer-->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+<th:block data-th-replace="${script}"></th:block>
+</body>
+</html>
