@@ -19,13 +19,18 @@ public class User {
 
   @Column(name="user_name", nullable = false)
   private String name;
+
   @Column(unique = true, nullable = false)
   private String email;
+
   private String password;
+
   @Column(length = 100)
   private String about;
+
   @Lob
   private String profilePic;
+
   private String phoneNumber;
 
   //Information

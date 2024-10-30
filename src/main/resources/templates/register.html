@@ -41,35 +41,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" contect="width=device-width, initial-sacle=1.0" />
-  <title>register page</title>
+  <title>SignUp</title>
 </head>
 <body>
 <div id="content">
+  <!--card-responsive-->
  <div class="grid grid-cols-12">
-   <!--main-div-->
-   <div class="col-span-6"></div>
-   <div class="col-span-12 md:col-span-4">
-     <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-       <a href="#">
-         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-       </a>
-       <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-       <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-         Read more
-         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-         </svg>
-       </a>
-     </div>
-   </div>
+     <div class="col-span-4 md:col-span-2 lg:col-span-3 xl:col-span-4"></div>
+     <div class="col-span-12 md:col-span-8 lg:col-span-6 xl:col-span-4">
+     <!--main-card__content-->
+         <div class="block p-6 bg-white border-t-[10px] border-blue-700 rounded-xl shadow hover:bg-gray-100 dark:bg-gray-900 dark:border-blue-700 dark:hover:bg-gray-800">
+             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">SignUp Here</h5>
+             <p class="font-normal text-gray-700 dark:text-gray-400">
+                 Start managing content for cloud services...
+             </p>
 
+             <!--Form-for-fields-->
+             <form data-th-action="@{'/do-register'}"
+                   method="post"
+                   th:object="${userForm}"
+                   class="mt-4 mb-3">
+                 <!--name-->
+                 <div class="mb-5">
+                     <label for="email"
+                            class="block mb-1 text-sm font-medium text-gray-900 dark:text-white"
+                     >Name</label>
+                     <input type="text"
+                            id="name"
+                            data-th-field="*{name}"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="name..."
+                            required />
+                 </div>
+
+                 <!--email-field-->
+                 <div class="mb-5">
+                     <label for="email"
+                            class="block mb-1 text-sm font-medium text-gray-900 dark:text-white"
+                     >Email</label>
+                     <input type="email"
+                            id="email"
+                            data-th-field="*{email}"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="email..."
+                            required />
+                 </div>
+                 <!--password-field-->
+                 <div class="mb-5">
+                     <label for="password"
+                            class="block mb-1 text-sm font-medium text-gray-900 dark:text-white"
+                     >Password</label>
+                     <input type="password"
+                            id="password"
+                            data-th-field="*{password}"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="password..."
+                            required />
+                 </div>
+                 <!--phone-Number-->
+                 <div class="mb-5">
+                     <label for="phone"
+                            class="block mb-1 text-sm font-medium text-gray-900 dark:text-white"
+                     >Contact</label>
+                     <input type="text"
+                            id="phone"
+                            data-th-field="*{phoneNumber}"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="contact..."
+                            required />
+                 </div>
+                 <!--about-text-area-->
+                 <div class="mb-5">
+                     <label for="about"
+                            class="block mb-1 text-sm font-medium text-gray-900 dark:text-white"
+                     >About</label>
+                     <textarea id="about"
+                               rows="3"
+                               data-th-field="*{about}"
+                              class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block h-32 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                              placeholder="Write here..."
+                              required>
+
+                     </textarea>
+                 </div>
+                 <!--submit-button-->
+                 <div class="flex justify-center mb-2 space-x-3">
+                 <button type="submit"
+                         class="w-full px-6 py-3 bg-blue-900 text-white rounded-lg focus:outline-none hover:bg-blue-800 dark:bg-black-900 dark:hover:bg-black-700" >
+                     SignUp
+                 </button>
+                 <button type="reset"
+                             class="w-full px-6 py-3 bg-blue-900 text-white rounded-lg focus:outline-none hover:bg-blue-800 dark:bg-black-900 dark:hover:bg-black-700" >
+                         Reset
+                 </button>
+                     <div class="flex items-center ml-3 ">
+                         <a href="#" class="text-sm text-blue-900 dark:text-blue-400">
+                             Forgot Password?
+                         </a>
+                     </div>
+
+                 </div>
+             </form>
+             <!--fields-form-->
+         </div>
+     <!--main-card--close-->
+     </div>
+    </div>
  </div>
-</div>
+    <!--card-responsive-close-->
+ </div>
+
+
+
+
+
 <script>
-  console.log("about page")
-</script>
-<script>
-  console.log("second about page script")
+  console.log("REGISTER PAGE")
 </script>
 </body>
 </html>

@@ -4,24 +4,30 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" contect="width=device-width, initial-sacle=1.0" />
+    <meta name="viewport" contect="width=device-width, initial-scale=1.0" />
     <title data-th-replace="${title}">SCM</title>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}"/>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"
+          rel="stylesheet" />
+
     <!--dark--theme-->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
           integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
 </head>
-<body class="dark:bg-gray-900 dark:text-white">
+<body class="dark:bg-gray-900 dark:text-white bg-gray-100 ">
 <!--comman header-->
    <div data-th-replace="navbar::navbar"></div>
 
 <!-- main content-->
 <div class="p-4">
-<section data-th-replace="${content}"></section>
+ <section data-th-replace="${content}"></section>
 </div>
 <!--flowbite content-->
+
+
 <!--comman footer-->
    <!--footer class="p-4">
        Footer: SCM Project By DEEPAKASH
