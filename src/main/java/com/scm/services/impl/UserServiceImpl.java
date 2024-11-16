@@ -4,26 +4,23 @@ import com.scm.entities.User;
 import com.scm.helper.ResourceNotFoundException;
 import com.scm.repositories.UserRepository;
 import com.scm.services.UserService;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.logging.Logger;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService{
+
+
     private UserRepository userRepository;
 
     public UserServiceImpl(UserRepository userRepository) {
+
         this.userRepository = userRepository;
     }
 
-   private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
 
 
     @Override
